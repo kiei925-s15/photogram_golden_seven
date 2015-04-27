@@ -1,15 +1,15 @@
 
-
-<form action="http://localhost:3000/update_photo/4">
-    <div>
-      <label for="the_new_caption">Caption:</label>
-      <input type="text" name="the_new_caption" value="<%= @cap %>">
-    </div>
-    <div>
-      <label for="the_new_source">Image URL:</label>
-      <input type="text" name="the_new_source" value="<%= @img %>">
-    </div>
-    <div>
-      <button>Update Photo</button>
-    </div>
+<form action="http://localhost:3000/update_photo/<%=@id%>">
+  <div>
+    <label for="photo_caption">Caption:</label>
+    <input id="photo_caption" type="text" name="the_caption" value= "<%=@cap%>" >
+  </div>
+  <div>
+    <label for="photo_image_url">Image URL:</label>
+    <input id="photo_image_url" type="text" name="the_source" value= "<%=@img%>" >
+  </div>
+  <div>
+    <button>Edit Photo</button>
+  </div>
 </form>
+

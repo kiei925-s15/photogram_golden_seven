@@ -16,8 +16,8 @@ class PhotosController < ApplicationController
 
   def create_row
     z = Photo.new
-    z.caption = params[:photo_caption]
-    z.source = params[:photo_image_url]
+    z.caption = params["the_caption"]
+    z.source = params["the_source"]
     z.save
     redirect_to("http://localhost:3000/photos")
   end
@@ -29,16 +29,18 @@ class PhotosController < ApplicationController
   end
 
   def edit_form
-    @edit = Photo.find_by({:id => params["id"]})
-    @img = @edit.source
-    @cap = @edit.caption
+    z = Photo.find(params[:id])
+    @img = z.source
+    @cap = z.caption
+    @id = z.id
     render 'edit_form'
   end
 
+
   def update_row
-    z = Photo.find_by({:id => params["id"]})
-    z.caption = params[:the_new_caption]
-    z.source = params[:the_new_source]
+    z = Photo.find(params[:id])
+    z.caption = params["the_caption"]
+    z.source = params["the_source"]
     z.save
     redirect_to("http://localhost:3000/photos")
   end
