@@ -19,4 +19,10 @@ class PhotosController < ApplicationController
     redirect_to("http://localhost:3000/photos")
   end
 
+  def destroy
+    destroy_row = Photo.find(params[:id])
+    destroy_row.destroy
+    redirect_to("http://localhost:3000/photos")
+  end
+
 end
