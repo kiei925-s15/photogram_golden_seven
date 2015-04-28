@@ -34,10 +34,12 @@ end
   end
 
   def update_row
-    update_photo= Photo.find(params[:id])
-    update_photo.caption=@photo.caption
-    update_photo.save
-redirect_to("http://localhost:3000/photos/:id")
+    update_photo=Photo.find(params["id"])
+    update_photo.caption=params(@photo.caption)
+    update.photo.save
+
+  redirect_to("http://localhost:3000/photos")
   end
+
 end
 
