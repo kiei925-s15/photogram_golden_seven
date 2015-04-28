@@ -3,6 +3,9 @@ class PhotosController < ApplicationController
     @list_of_photos = Photo.all
   end
 
+  def new_form
+  end
+
   def show
     @z = Photo.find(params["id"])
     @z.source=@z["source"]
