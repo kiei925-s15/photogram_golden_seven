@@ -4,7 +4,8 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @show_photo = Photo.find(1)
-
+    @z = Photo.find(params["id"])
+    @z.source=@z["source"]
+    @z.caption=@z["caption"]
   end
 end
