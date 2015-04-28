@@ -22,8 +22,17 @@ class PhotosController < ApplicationController
 
   def destroy
     photo = Photo.find(params[:id])
-    photo.destroy=params[:delete_row]
-redirect_to("http://localhost:3000/photos")
+    photo.destroy=params["delete_row"]
+
+    redirect_to("http://localhost:3000/photos")
 end
 
+  def edit_form
+    @photo = Photo.find(params["id"])
+    @photo.source=@photo["source"]
+    @photo.caption=@photo["caption"]
+    @photo.save
+  end
+
 end
+
