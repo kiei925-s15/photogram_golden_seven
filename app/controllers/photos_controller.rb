@@ -20,5 +20,10 @@ class PhotosController < ApplicationController
     @z.caption=@z["caption"]
   end
 
+  def destroy
+    photo = Photo.find(params[:id])
+    photo.destroy=params[:delete_row]
+redirect_to("http://localhost:3000/photos")
+end
 
 end
