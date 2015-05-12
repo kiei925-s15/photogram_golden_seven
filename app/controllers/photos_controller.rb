@@ -17,6 +17,7 @@ class PhotosController < ApplicationController
   def create_row
     z = Photo.new
     z.caption = params["the_caption"]
+    # where are these strings: "the_caption" and "the_source" pulling from? Look in new form view - coming from the name field in the form.
     z.source = params["the_source"]
     z.save
     redirect_to("http://localhost:3000/photos")
