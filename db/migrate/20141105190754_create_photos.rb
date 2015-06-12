@@ -4,6 +4,6 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :source
       t.text :caption
       t.timestamps
-    end
   end
+end
 end
