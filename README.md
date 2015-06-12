@@ -159,7 +159,7 @@ Think of the action attribute as being like the `href` attribute of the `<a>` ta
 
 Of course, if you click it right now, you'll receive a "NO ROUTE MATCHES" error -- because we haven't set up a route to support `"/create_photo"`. Let's do that:
 
-#### create_row
+<!-- #### create_row
 
     get("/create_photo", { :controller => "photos", :action => "create_row" })
 
@@ -177,7 +177,7 @@ If the former, simply add whatever HTML to the view template you think is approp
 
 If you instead just want to send the user back to the index page immediately, try the following in the action instead of `render`:
 
-    redirect_to("http://localhost:3000/photos")
+    redirect_to("http://localhost:3000/photos") -->
 
 ### DELETE (destroy)
 
@@ -219,7 +219,7 @@ The `action` attributes of your edit forms should look like this:
 
 so that when the user clicks submit, we can finally do the work of updating our database...
 
-#### update_row
+<!-- #### update_row
 
 Add another route:
 
@@ -228,7 +228,7 @@ Add another route:
 The job of this action is to receive data from an edit form, retrieve the corresponding row from the table, and update it with the revised information. Give it a shot.
 
 Afterwards, redirect the user to the details page of the photo that was just edited.
-
+ -->
 ## Rinse and repeat
 
 This is optional, but when I was learning this material, I found sheer repetition to be really helpful in connecting the dots in my brain.
